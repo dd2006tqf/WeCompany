@@ -87,20 +87,6 @@
 ![背景音乐](https://gitee.com/hudejie/wecom-copy/raw/master/screenshot/背景音乐.gif)
 
 
-# 📝参考网址
 
-#### [📗qt官网](https://doc.qt.io/)
-
-#### [📘QTCN开发网](http://www.qtcn.org)
-
-#### [📙飞扬青云](https://gitee.com/feiyangqingyun)
-
-#### [📙ECharts](https://echarts.apache.org/zh/index.html)
-
-# 📌CSDN
-
-#### [🎉欢迎关注CSDN](https://blog.csdn.net/qq_25549309)
-
-# 🧡Star
 
 #### 如果你觉得项目用来学习不错，可以给项目点点star，谢谢。
