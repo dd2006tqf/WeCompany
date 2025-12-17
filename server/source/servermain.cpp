@@ -158,7 +158,8 @@ int main(int argc, char *argv[])
             dbManager.deleteOldMessages(30);
         }
     });
-    tokenCleanupTimer.start(3600000);  // Every hour
+    const int ONE_HOUR_MS = 60 * 60 * 1000;  // 1 hour in milliseconds
+    tokenCleanupTimer.start(ONE_HOUR_MS);
 
     qInfo() << "========================================";
     qInfo() << "WeCompany Server v2.0 started";

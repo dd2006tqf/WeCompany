@@ -1,6 +1,9 @@
 #include "authmanager.h"
 #include <QDebug>
 #include <QRandomGenerator>
+#include <QUuid>
+#include <QCryptographicHash>
+#include <QDateTime>
 
 AuthManager::AuthManager(QObject *parent)
     : QObject(parent)

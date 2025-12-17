@@ -467,6 +467,8 @@ bool DatabaseManager::markMessagesAsDelivered(const QString &userId)
 bool DatabaseManager::deleteOldMessages(int daysOld)
 {
     QSqlQuery query(m_db);
+    // MySQL-specific query using DATE_SUB
+    // For other databases, use: WHERE sent_at < CURRENT_TIMESTAMP - INTERVAL ? DAY
     query.prepare("DELETE FROM offline_messages WHERE sent_at < DATE_SUB(NOW(), INTERVAL ? DAY) AND delivered = TRUE");
     query.addBindValue(daysOld);
     
