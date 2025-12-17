@@ -1,12 +1,14 @@
-# WeCompany Server
+# WeCompany Server v2.0
 
 ## 简介 (Introduction)
 
-WeCompany Server 是企业微信服务端实现，提供音视频通话和TCP通信功能。
+WeCompany Server 是企业微信服务端完整实现，提供音视频通话、TCP通信、用户认证、数据库持久化和声网SDK集成等功能。
 
-WeCompany Server is the server-side implementation for the WeCompany application, providing audio/video calling and TCP communication features.
+WeCompany Server is the comprehensive server-side implementation for the WeCompany application, providing audio/video calling, TCP communication, user authentication, database persistence, and Agora SDK integration.
 
 ## 功能特性 (Features)
+
+### 核心功能 (Core Features)
 
 - **TCP 服务器** - 处理客户端连接和消息通信
   - TCP Server - Handles client connections and message communication
@@ -19,6 +21,26 @@ WeCompany Server is the server-side implementation for the WeCompany application
   
 - **媒体中继** - 音视频数据在客户端之间转发
   - Media Relay - Audio/video data forwarding between clients
+
+### v2.0 新增功能 (New in v2.0)
+
+- **用户认证系统** - 登录验证、Token 生成和分发
+  - User Authentication - Login verification, token generation and distribution
+  
+- **MySQL 数据库集成** - 账号管理、好友关系、消息持久化
+  - MySQL Database Integration - Account management, friend relationships, message persistence
+  
+- **分段加载优化** - 好友列表分页加载，提升响应速度
+  - Segmented Loading - Paginated friend list loading for improved response time
+  
+- **声网 SDK 支持** - 专业音视频通话、频道管理、Token 鉴权
+  - Agora SDK Support - Professional audio/video calling, channel management, token authentication
+  
+- **PCM 音频存储** - 音频文件存储和管理
+  - PCM Audio Storage - Audio file storage and management
+  
+- **离线消息队列** - 用户离线时消息存储和送达
+  - Offline Message Queue - Message storage and delivery for offline users
 
 ## 架构 (Architecture)
 
@@ -33,6 +55,21 @@ WeCompany Server is the server-side implementation for the WeCompany application
    - 呼叫会话管理
    - 呼叫信令处理
    - 媒体数据转发
+
+3. **AuthManager** - 用户认证管理器（新增）
+   - 用户注册和登录
+   - Token 生成和验证
+   - 密码加密和安全管理
+
+4. **DatabaseManager** - 数据库管理器（新增）
+   - MySQL 连接和操作
+   - 用户、好友、消息数据管理
+   - 分页查询优化
+
+5. **AgoraManager** - 声网SDK管理器（新增）
+   - Token 生成（RTC/RTM）
+   - 频道创建和管理
+   - PCM 音频文件处理
 
 ### 消息协议 (Message Protocol)
 
