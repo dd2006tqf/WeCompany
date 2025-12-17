@@ -1,0 +1,17 @@
+# WeCompany Server Configuration
+
+# Server settings
+server.port=8888
+server.maxConnections=1000
+
+# Logging
+log.level=INFO
+log.file=wecompany_server.log
+
+# Call settings
+call.maxDuration=3600000
+call.timeout=30000
+
+# Network settings
+network.keepAliveInterval=30000
+network.bufferSize=65536

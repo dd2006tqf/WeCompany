@@ -54,4 +54,5 @@ Makefile*
 *.Release
 *.~vsdx
 *.txt
+!server/config.example.txt
 *.pdb
