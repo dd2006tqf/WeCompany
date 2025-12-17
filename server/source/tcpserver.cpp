@@ -46,7 +46,7 @@ void TcpServer::incomingConnection(qintptr socketDescriptor)
     if (socket->setSocketDescriptor(socketDescriptor)) {
         connect(socket, &QTcpSocket::readyRead, this, &TcpServer::onClientReadyRead);
         connect(socket, &QTcpSocket::disconnected, this, &TcpServer::onClientDisconnected);
-        connect(socket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::errorOccurred),
+        connect(socket, static_cast<void(QAbstractSocket::*)(QAbstractSocket::SocketError)>(&QAbstractSocket::error),
                 this, &TcpServer::onClientError);
         
         qInfo() << "New connection from" << socket->peerAddress().toString() 
@@ -118,13 +118,12 @@ void TcpServer::handleMessage(QTcpSocket *socket, const QByteArray &data)
     
     // Extract remaining data
     QByteArray payload;
-    while (!stream.atEnd()) {
-        char byte;
-        stream.readRawData(&byte, 1);
-        payload.append(byte);
+    QIODevice *device = stream.device();
+    if (device && device->bytesAvailable() > 0) {
+        payload = device->readAll();
     }
     
-    emit messageReceived(userId, static_cast<MessageType>(msgType), payload);
+    emit messageReceived(userId, static_cast<int>(msgType), payload);
 }
 
 void TcpServer::registerClient(QTcpSocket *socket, const QString &userId)

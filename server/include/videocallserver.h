@@ -62,7 +62,6 @@ private:
     TcpServer *m_tcpServer;
     QMap<QString, CallSession*> m_callSessions;  // callId -> CallSession
     QMap<QString, QString> m_userToCallId;       // userId -> callId (for active calls)
-    int m_callIdCounter;
 
 signals:
     void callInitiated(const QString &callId, const QString &caller, const QString &callee);

@@ -6,7 +6,7 @@
 #include <QUuid>
 
 VideoCallServer::VideoCallServer(TcpServer *tcpServer, QObject *parent)
-    : QObject(parent), m_tcpServer(tcpServer), m_callIdCounter(0)
+    : QObject(parent), m_tcpServer(tcpServer)
 {
     connect(m_tcpServer, &TcpServer::messageReceived, 
             this, &VideoCallServer::onMessageReceived);

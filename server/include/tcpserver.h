@@ -60,7 +60,7 @@ private:
 signals:
     void clientConnected(const QString &userId);
     void clientDisconnected(const QString &userId);
-    void messageReceived(const QString &userId, MessageType type, const QByteArray &data);
+    void messageReceived(const QString &userId, int msgType, const QByteArray &data);
 };
 
 #endif // TCPSERVER_H
