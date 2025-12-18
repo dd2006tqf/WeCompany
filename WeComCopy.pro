@@ -6,7 +6,7 @@
 
 QT       += core gui
 QT       += webenginewidgets webchannel
-QT       += multimedia
+QT       += multimedia network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -51,7 +51,9 @@ SOURCES += source/main.cpp\
     source/boderpane.cpp \
     source/userprofiles.cpp \
     source/appreciatedlg.cpp \
-    source/carouselpane.cpp
+    source/carouselpane.cpp \
+    source/serverlogindlg.cpp \
+    source/calldialog.cpp
 
 HEADERS  += include/wecomwnd.h \
     include/navpane.h \
@@ -83,7 +85,9 @@ HEADERS  += include/wecomwnd.h \
     include/boderpane.h \
     include/userprofiles.h \
     include/appreciatedlg.h \
-    include/carouselpane.h
+    include/carouselpane.h \
+    include/serverlogindlg.h \
+    include/calldialog.h
 
 FORMS    += ui/wecomwnd.ui \
     ui/userprofiles.ui \
