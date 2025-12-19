@@ -84,8 +84,8 @@ void WeComWnd::Login()
 {
     if (m_Logindlg)
     {
-        m_Logindlg->show();
         m_Logindlg->setModal(true);
+        m_Logindlg->show();
     }
 }
 
